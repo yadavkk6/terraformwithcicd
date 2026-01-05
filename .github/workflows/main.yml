@@ -1,0 +1,37 @@
+name: "dev pipieline"
+on: workflow_dispatch
+
+jobs: 
+  terraform-job:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.1
+      - name: HashiCorp - Setup Terraform
+        uses: hashicorp/setup-terraform@v2.0.3
+       
+      - name: Login to AWS
+        # You may pin to the exact commit or the version.
+        # uses: KoalaOps/login-aws@7a23f24f21581ee70feaedcb814a314fff8a39e0
+        uses: KoalaOps/login-aws@v1.0.0
+        with:
+          # AWS region
+          aws_region: 
+          # ARN of the IAM role to assume (required for OIDC)
+          role_to_assume: 
+          # Name for the assumed role session
+          role_session_name: # optional, default is github-actions-${{ github.run_id }}
+          # Duration of the role session in seconds
+          role_duration: # optional, default is 3600
+          # Enable Docker login to Amazon ECR
+          enable_ecr_login: # optional, default is false
+          # Name of the EKS cluster to configure kubectl for
+          eks_cluster_name: # optional
+          # Comma-separated list of ECR registry IDs for cross-account access
+          ecr_registries: # optional
+          # Comma-separated list of ECR repositories to ensure exist (e.g., "backend,frontend")
+          ecr_repositories: # optional, default is 
+          
+        
+    
+  
