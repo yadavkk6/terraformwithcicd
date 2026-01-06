@@ -16,8 +16,8 @@ jobs:
         uses: KoalaOps/login-aws@v1.0.0
         with:
           aws_region: us-east-1
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secrte-access-key: ${{secrets.AWS_SECRTE_ACCESS_KEY}}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secrte-access-key: ${{ secrets.AWS_SECRTE_ACCESS_KEY }}
 
           
         
