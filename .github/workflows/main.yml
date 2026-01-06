@@ -1,12 +1,11 @@
 name: "dev pipieline"
 on: workflow_dispatch
-
+permissions:
+  id-token: write 
+  contents: read
 jobs: 
   terraform-job:
     runs-on: self-hosted
-    permissions:
-      id-token: write 
-      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.1
