@@ -4,6 +4,9 @@ on: workflow_dispatch
 jobs: 
   terraform-job:
     runs-on: self-hosted
+    permissions:
+      id-token: write 
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.1
@@ -11,8 +14,6 @@ jobs:
         uses: hashicorp/setup-terraform@v2.0.3
        
       - name: Login to AWS
-        # You may pin to the exact commit or the version.
-        # uses: KoalaOps/login-aws@7a23f24f21581ee70feaedcb814a314fff8a39e0
         uses: KoalaOps/login-aws@v1.0.0
         with:
           aws_region: us-east-1
