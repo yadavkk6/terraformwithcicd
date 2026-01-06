@@ -17,7 +17,7 @@ jobs:
         with:
           aws_region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secrte-access-key: ${{ secrets.AWS_SECRTE_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRTE_ACCESS_KEY }}
 
           
         
