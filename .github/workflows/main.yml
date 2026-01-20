@@ -17,6 +17,10 @@ jobs:
         with:
           aws-region: us-east-2
           role-to-assume: arn:aws:iam::424774937280:role/github-action-role
+      - name: Terraform fmt
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
 
           
 
