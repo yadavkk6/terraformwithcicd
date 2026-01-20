@@ -20,7 +20,7 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init -input=false
-        working-directory: $(System.DefaultWorkingDirectory)/environments/dev
+        working-directory: ${{ github.workspace }}/environments/dev
         
 
         
